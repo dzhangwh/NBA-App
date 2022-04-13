@@ -34,7 +34,7 @@ function App() {
             .then(data => setNba(data))
     }, [])
 
-    console.log(setNba.league)
+
 
 
     return (

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Signup({ }) {
+function Signup({ setUser, navigate }) {
 
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -11,18 +11,24 @@ function Signup({ }) {
 
     const handleUsername = (e) => setUsername(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
+    const handlePasswordConfirm = (e) => setPasswordConfirm(e.target.value)
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (password == passwordConfirm) {
-
-
-        }
-
-
+            const newUser = { first_name: firstname, last_name: lastname, username: username, password: passwordConfirm }
+            fetch(`/signup`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newUser),
+            })
+                .then((r) => r.json())
+                .then(setUser)
+        };
 
     }
-
 
     return (
 
