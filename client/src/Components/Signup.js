@@ -8,16 +8,20 @@ function Signup({ setUser, navigate }) {
     const [passwordConfirm, setPasswordConfirm] = useState("")
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
+    const [submitted, setSubmitted] = useState(false);
 
     const handleUsername = (e) => setUsername(e.target.value)
     const handlePassword = (e) => setPassword(e.target.value)
     const handlePasswordConfirm = (e) => setPasswordConfirm(e.target.value)
+    const handleFirstname = (e) => setFirstname(e.target.value)
+    const handleLastname = (e) => setLastname(e.target.value)
+
 
     const handleSubmit = (e) => {
         e.preventDefault()
         if (password == passwordConfirm) {
             const newUser = { first_name: firstname, last_name: lastname, username: username, password: passwordConfirm }
-            fetch(`/signup`, {
+            fetch(`/users`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -26,6 +30,7 @@ function Signup({ setUser, navigate }) {
             })
                 .then((r) => r.json())
                 .then(setUser)
+            setSubmitted(true)
         };
 
     }
@@ -35,20 +40,22 @@ function Signup({ setUser, navigate }) {
         <div>
             <h1 style={{ align: "center" }} >Signup</h1>
             <div className="login">
-                <form className="signup-form" >
+                <form className="signup-form" onSubmit={(e) => handleSubmit(e)}>
                     <label>Firstname</label>
                     <input
                         type="text"
-                        value
+                        value={firstname}
                         placeholder="Firstname"
+                        onChange={handleFirstname}
 
                     />
                     <br />
                     <label> Lastname</label>
                     <input
                         type="lastname"
-                        value
+                        value={lastname}
                         placeholder="Lastname"
+                        onChange={handleLastname}
 
                     />
                     <br />
@@ -56,24 +63,27 @@ function Signup({ setUser, navigate }) {
                     <label>Username</label>
                     <input
                         type="text"
-                        value
+                        value={username}
                         placeholder="Username"
+                        onChange={handleUsername}
 
                     />
                     <br />
                     <label>Password</label>
                     <input
                         type="text"
-                        value
+                        value={password}
                         placeholder="Password"
+                        onChange={handlePassword}
 
                     />
                     <br />
                     <label>Confirm Password</label>
                     <input
                         type="text"
-                        value
+                        value={passwordConfirm}
                         placeholder="Confirm Password"
+                        onChange={handlePasswordConfirm}
 
                     />
                     <div style={{ align: "center" }} className="submit-signup">
