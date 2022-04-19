@@ -46,3 +46,7 @@ group :development do
   # gem "spring"
 end
 
+
+gem "rest-client", "~> 2.1"
+
+gem "json", "~> 2.6"

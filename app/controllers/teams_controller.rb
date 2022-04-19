@@ -1,6 +1,5 @@
 class TeamsController < ApplicationController
-    skip_before_action :authorize, only: [:index]
-
+    
     def index 
         teams = Team.all
         render json: teams, status: :ok

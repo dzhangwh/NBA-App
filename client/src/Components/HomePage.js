@@ -1,33 +1,31 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 
 function HomePage({ user, nba }) {
-
-
 
     return (
 
         <div align="center" className="homepage">
             <h1> Welcome to NBA Stats App </h1>
-            <p>
-                Login/signup is required for custom teams/stats
-            </p>
+            <h2>
+                Login/signup is required for teams/brackets
+            </h2>
             {
-                !user && (
-                    <div className="signup-container">
-                        <NavLink to="/signup">
-                            <button> SignUp </button>
-                        </NavLink>
-                        <NavLink to="/login">
-                            <button> Login </button>
+                !user && <>
+                    <div className='signup-button'>
+                        <NavLink to='/signup'>
+                            <button>Signup</button>
                         </NavLink>
                     </div>
 
-                )
+                    <div className='login-button'>
+                        <NavLink to='/login'>
+                            <button>Login</button>
+                        </NavLink>
+                    </div>
+                </>
             }
         </div>
-
-
     )
 }
 

@@ -1,3 +1,5 @@
 class Team < ApplicationRecord
-  belongs_to :user
+
+  has_many :brackets, dependent: :destroy
+  has_many :users, through: :brackets
 end

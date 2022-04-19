@@ -6,5 +6,18 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+User.destroy_all
+Team.destroy_all
+Bracket.destroy_all
 
-dan = User.create(username: "dan", password: "asdf")
+puts "seed users test"
+
+user1 = User.create(username: "dan", password: "asdf")
+
+puts "seed teams test"
+
+team1 = Team.create(name: "Dummy Team", confName: "East" )
+
+puts "seed bracket test"
+
+Bracket.create(name: "Dummy Br", user_id: user1.id, team_id: team1.id)

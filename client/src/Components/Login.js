@@ -8,9 +8,6 @@ function Login({ setUser, navigate }) {
     const handleUsername = (e) => setUsername(e.target.value);
     const handlePassword = (e) => setPassword(e.target.value);
 
-
-
-
     const handleLogin = (e) => {
         e.preventDefault();
         fetch(`/login`, {
@@ -31,7 +28,6 @@ function Login({ setUser, navigate }) {
             }
         });
     };
-
 
     return (
         <div>
