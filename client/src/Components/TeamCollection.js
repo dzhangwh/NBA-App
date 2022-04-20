@@ -6,11 +6,6 @@ function TeamCollection({ nba, setNba }) {
 
 
 
-
-    /*
-    <ul className="cards">{nba.map((nbaObj) => <TeamCard key={nbaObj.id} {...nbaObj} />)}</ul>
-    */
-
     return (
 
         < div className="video-collection">

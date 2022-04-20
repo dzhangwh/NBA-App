@@ -8,7 +8,8 @@ import Login from "./Login";
 import Profile from "./Profile"
 import TeamPage from "./TeamPage"
 import LogOut from "./Logout";
-
+import Bracket from "./Bracket";
+import TeamCard from "./TeamCard";
 
 function App() {
 
@@ -52,7 +53,7 @@ function App() {
                     element={<Login setUser={setUser} />}
                 />
                 <Route path="/profile"
-                    element={<Profile setUser={setUser} />}
+                    element={<Profile user={user} setUser={setUser} />}
                 />
 
                 <Route path="/teams"
@@ -60,6 +61,9 @@ function App() {
                 />
                 <Route path="/logout"
                     element={<LogOut setUser={setUser} navigate={navigate} />}
+                />
+                <Route path="/bracket"
+                    element={<Bracket setUser={setUser} navigate={navigate} />}
                 />
 
             </Routes>

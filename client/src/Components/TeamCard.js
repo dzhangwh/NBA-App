@@ -7,7 +7,7 @@ function TeamCard({ fullName, confName }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
-        { navigate(`/teams/`) }
+
     }
 
 

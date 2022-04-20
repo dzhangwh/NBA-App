@@ -7,11 +7,9 @@ function HomePage({ user, nba }) {
 
         <div align="center" className="homepage">
             <h1> Welcome to NBA Stats App </h1>
-            <h2>
-                Login/signup is required for teams/brackets
-            </h2>
             {
                 !user && <>
+                    <div> Login/signup is required for teams/brackets</div>
                     <div className='signup-button'>
                         <NavLink to='/signup'>
                             <button>Signup</button>
