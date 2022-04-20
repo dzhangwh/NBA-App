@@ -1,48 +1,70 @@
 import React, { useState } from "react";
 
 
-const Bracket = ({ }) => {
+const Bracket = ({ nba, user }) => {
 
-    const [addTeam, setAddTeam] = useState("");
     const [name, setName] = useState("");
+    const [teamName, setTeamName] = useState("");
     const [confName, setConfName] = useState("");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const newTeam = {
+        const newBracket = {
             name: name,
-            confName: confName,
+            user_id: user.id,
+
+            team: {
+                teamName: teamName,
+                confName: confName,
+            }
         };
 
-        fetch('/teams', {
+        fetch('/brackets', {
             method: 'POST',
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(newTeam)
-        }).then(() => {
-            console.log('test');
-        })
-    }
+            body: JSON.stringify(newBracket)
+        }).then(r => r.json())
+            .then((data) => {
+                console.log(data);
+                if (data.error) {
+                    alert(`${data.error}`)
+                }
+                else {
+                    alert(`created ${data.name}`)
+                }
+            })
+        setName('')
+        setConfName('')
+        setTeamName('')
 
+    }
 
     return (
         <div className="add">
-            <h2>Add a team</h2>
+            <h2>Create a Bracket First</h2>
             <form onSubmit={handleSubmit}>
-                <label>Team Name: </label>
+                <label>Bracket Name: </label>
                 <input
                     type="text"
                     required
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <label>Conference: </label>
+                <label>Team Name: </label>
                 <input
+                    type="text"
+                    required
+                    value={teamName}
+                    onChange={(e) => setTeamName(e.target.value)}
+                />
+                <label>Conf Name: </label>
+                <input
+                    type="text"
                     required
                     value={confName}
                     onChange={(e) => setConfName(e.target.value)}
                 />
-
-                <button>Add Team</button>
+                <button>Create Bracket</button>
             </form>
         </div>
     );

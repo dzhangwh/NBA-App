@@ -7,10 +7,9 @@ function TeamCard({ fullName, confName }) {
 
     async function handleSubmit(e) {
         e.preventDefault();
+        console.log(fullName)
 
     }
-
-
 
     return (
         <li className="card">

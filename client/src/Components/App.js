@@ -63,7 +63,7 @@ function App() {
                     element={<LogOut setUser={setUser} navigate={navigate} />}
                 />
                 <Route path="/bracket"
-                    element={<Bracket setUser={setUser} navigate={navigate} />}
+                    element={<Bracket nba={nba} user={user} setUser={setUser} navigate={navigate} />}
                 />
 
             </Routes>
