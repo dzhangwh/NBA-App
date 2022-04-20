@@ -1,6 +1,6 @@
 import React from "react";
 import TeamCard from "./TeamCard";
-import Profile from "./Profile";
+
 
 
 function TeamCollection({ nba, setNba, profile }) {
@@ -16,7 +16,7 @@ function TeamCollection({ nba, setNba, profile }) {
 
         < div className="video-collection">
             <ul className="cards">{nba?.map((nbaObj) => <TeamCard key={nbaObj.teamId} {...nbaObj} />)}</ul>
-            <ul className="cards">{profile?.map((profileObj) => <Profile key={profileObj.id} {...profileObj} />)}</ul>
+
         </div >
 
     )

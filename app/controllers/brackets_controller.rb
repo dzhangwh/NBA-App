@@ -1,4 +1,4 @@
-
+require 'byebug'
 
 class BracketsController < ApplicationController
     skip_before_action :authorized, only: :index
@@ -18,16 +18,21 @@ class BracketsController < ApplicationController
        
         teams_instances = teams.map {|o|  
        
-        if !!Team.find_by(name: o["fullName"])
-             Team.find_by(name: o["fullName"])
+        if !!Team.find_by(name: o["teamName"])
+            t=Team.find_by(name: o["teamName"])
+            
         else 
-             Team.create(name: o["fullName"], confName: o["confName"])
+          t=Team.create(name: o["teamName"], confName: o["confName"])
+          
         end 
         }
        
         bracket = Bracket.create(name: params[:name], user_id: params[:user_id])
+  
+        teams_instances.each{|o| 
         
-        teams_instances.each{|o| Bracketteam.create(bracket_id: bracket.id, team_id: o.id)}
+        Bracketteam.create(bracket_id: bracket.id, team_id: o.id)
+    }
         
         render json: bracket, status: :created
     end
