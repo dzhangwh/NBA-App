@@ -6,7 +6,7 @@ function TeamCollection({ nba, setNba }) {
 
 
 
-    const test = nba?.forEach(data => console.log(data))
+    // const test = nba?.forEach(data => console.log(data))
 
 
 

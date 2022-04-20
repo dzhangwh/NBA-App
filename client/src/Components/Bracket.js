@@ -1,11 +1,31 @@
 import React, { useState } from "react";
 
 
-const Bracket = ({ nba, user }) => {
+const Bracket = ({ nba, user, test }) => {
 
     const [name, setName] = useState("");
     const [teamName, setTeamName] = useState("");
     const [confName, setConfName] = useState("");
+    const [drop, setDrop] = useState("");
+    const [teamNameTwo, setTeamNameTwo] = useState("");
+    const [teamNameThree, setTeamNameThree] = useState("");
+    const [teamNameFour, setTeamNameFour] = useState("");
+
+    // const [showForm, setShowForm] = useState(false);
+    // const hideForm = () => {
+    //     setShowForm(!showForm)
+    // }
+
+    console.log(test)
+
+    const testTwo = test?.forEach(function (x) {
+        const v = x.fullName;
+    })
+
+    const options = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
+    const optionsTwo = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
+    const optionsThree = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
+    const optionsFour = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -38,6 +58,22 @@ const Bracket = ({ nba, user }) => {
         setTeamName('')
     }
 
+    const handleDrop = (e) => {
+        setTeamName(e.target.value);
+    }
+
+    const handleDropTwo = (e) => {
+        setTeamNameTwo(e.target.value);
+    }
+
+    const handleDropThree = (e) => {
+        setTeamNameThree(e.target.value);
+    }
+
+    const handleDropFour = (e) => {
+        setTeamNameFour(e.target.value);
+    }
+
     return (
         <div>
             <h2>Create a Bracket First</h2>
@@ -49,13 +85,46 @@ const Bracket = ({ nba, user }) => {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                 />
-                <label>Team Name: </label>
+                <label>Team Name One: </label>
                 <input
                     type="text"
                     required
                     value={teamName}
                     onChange={(e) => setTeamName(e.target.value)}
                 />
+                <select
+                    className="drop-form"
+                    value={''}
+                    onChange={handleDrop}
+                >
+                    <option key={0} value={0}>
+                        select a team
+                    </option>
+                    {options}
+                    ))
+                </select>
+
+                <label>Team Name Two: </label>
+                <input
+                    type="text"
+                    required
+                    value={teamNameTwo}
+                    onChange={(e) => setTeamNameTwo(e.target.value)}
+                />
+                <select
+                    className="drop-form"
+                    value={''}
+                    onChange={handleDropTwo}
+                >
+                    <option key={0} value={0}>
+                        select a team
+                    </option>
+
+                    {optionsTwo}
+
+                    ))
+                </select>
+
                 <label>Conf Name: </label>
                 <input
                     type="text"

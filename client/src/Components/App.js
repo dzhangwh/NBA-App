@@ -34,7 +34,9 @@ function App() {
 
     console.log(user)
 
-    console.log(nba)
+    const test = nba?.league?.vegas
+
+    console.log(test)
 
     return (
         <div className="App">
@@ -61,7 +63,7 @@ function App() {
                     element={<LogOut setUser={setUser} navigate={navigate} />}
                 />
                 <Route path="/bracket"
-                    element={<Bracket nba={nba} user={user} setUser={setUser} navigate={navigate} />}
+                    element={<Bracket nba={nba} user={user} setUser={setUser} navigate={navigate} test={test} />}
                 />
 
             </Routes>
