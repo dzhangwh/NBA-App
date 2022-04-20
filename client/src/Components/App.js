@@ -17,7 +17,6 @@ function App() {
     const [user, setUser] = useState(null);
     const navigate = useNavigate()
 
-
     useEffect(() => {
         fetch("/me").then((r) => {
             if (r.ok) {
@@ -25,7 +24,6 @@ function App() {
             }
         });
     }, []);
-
 
     useEffect(() => {
         fetch("/fetch")

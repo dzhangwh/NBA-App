@@ -36,13 +36,12 @@ const Bracket = ({ nba, user }) => {
         setName('')
         setConfName('')
         setTeamName('')
-
     }
 
     return (
-        <div className="add">
+        <div>
             <h2>Create a Bracket First</h2>
-            <form onSubmit={handleSubmit}>
+            <form className="bracket" onSubmit={handleSubmit}>
                 <label>Bracket Name: </label>
                 <input
                     type="text"

@@ -30,7 +30,7 @@ function Login({ setUser, navigate }) {
     };
 
     return (
-        <div>
+        <div >
             <div className="form">
                 <form className="login-form" onSubmit={(e) => handleLogin(e)}>
                     <label>Username</label>

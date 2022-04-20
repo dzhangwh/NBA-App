@@ -5,11 +5,11 @@ function TeamCard({ fullName, confName }) {
     const navigate = useNavigate()
     // const {key values from our data, key, key} = videos}
 
-    async function handleSubmit(e) {
-        e.preventDefault();
-        console.log(fullName)
+    // async function handleSubmit(e) {
+    //     e.preventDefault();
+    //     console.log(fullName)
 
-    }
+    // }
 
     return (
         <li className="card">
@@ -20,7 +20,7 @@ function TeamCard({ fullName, confName }) {
 
 
 
-            <button className="primary" onClick={handleSubmit} >Add</button>
+            {/* <button className="primary" onClick={handleSubmit} >Add</button> */}
 
         </li>
     );

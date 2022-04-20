@@ -5,8 +5,38 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  background-image: url("https://media.istockphoto.com/illustrations/basketball-court-with-wood-texture-basketball-tactical-court-illustration-id1212609648?k=20&m=1212609648&s=612x612&w=0&h=zu2wOuFSp3ITyzREz1q9kNWzhJq4PdvFTAj7E7gJrdM=");
+  height: 100%;
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+
+
 }
 
+.login-form { 
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.signup-form {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.bracket {
+  display: flex;
+  flex-direction: column;
+} 
+
+*/
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

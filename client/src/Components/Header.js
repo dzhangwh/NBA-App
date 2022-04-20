@@ -27,7 +27,9 @@ function Header({ user }) {
             <NavLink to='/logout'>
                 <button>Logout</button>
             </NavLink>
-
+            <NavLink to='/bracket'>
+                <button>Bracket</button>
+            </NavLink>
         </div>
     )
 }
