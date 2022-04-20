@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bracketteams, only: [:index, :show]
+  
   resources :brackets, only: [:index, :show, :create, :update, :destroy]
   resources :users, only: [:index, :show, :create, :update, :destroy]
 

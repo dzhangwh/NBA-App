@@ -1,0 +1,4 @@
+class BracketteamsController < ApplicationController
+
+    
+end

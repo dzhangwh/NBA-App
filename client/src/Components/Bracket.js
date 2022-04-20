@@ -6,7 +6,7 @@ const Bracket = ({ nba, user, test }) => {
     const [name, setName] = useState("");
     const [teamName, setTeamName] = useState("");
     const [confName, setConfName] = useState("");
-    const [drop, setDrop] = useState("");
+    const [confNameTwo, setConfNameTwo] = useState("");
     const [teamNameTwo, setTeamNameTwo] = useState("");
     const [teamNameThree, setTeamNameThree] = useState("");
     const [teamNameFour, setTeamNameFour] = useState("");
@@ -29,15 +29,24 @@ const Bracket = ({ nba, user, test }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+
+
+
         const newBracket = {
             name: name,
             user_id: user.id,
 
-            team: {
+            teams: [{
                 teamName: teamName,
                 confName: confName,
+            },
+            {
+                teamName: teamNameTwo,
+                confName: confNameTwo,
             }
+            ]
         };
+
 
         fetch('/brackets', {
             method: 'POST',

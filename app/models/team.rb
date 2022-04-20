@@ -1,5 +1,7 @@
 class Team < ApplicationRecord
 
-  has_many :brackets, dependent: :destroy
-  has_many :users, through: :brackets
+
+  has_many :bracketteams, dependent: :destroy
+  has_many :brackets, through: :bracketteams, dependent: :destroy
+
 end

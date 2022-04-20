@@ -5,8 +5,8 @@ function Profile({ }) {
 
     return (
 
+        <div> pr</div>
 
-        <div> profile</div>
     )
 
 }
