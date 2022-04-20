@@ -8,19 +8,8 @@ const Bracket = ({ nba, user, test }) => {
     const [confName, setConfName] = useState("");
     const [confNameTwo, setConfNameTwo] = useState("");
     const [teamNameTwo, setTeamNameTwo] = useState("");
-    const [teamNameThree, setTeamNameThree] = useState("");
-    const [teamNameFour, setTeamNameFour] = useState("");
-
-    // const [showForm, setShowForm] = useState(false);
-    // const hideForm = () => {
-    //     setShowForm(!showForm)
-    // }
 
     console.log(test)
-
-    const testTwo = test?.forEach(function (x) {
-        const v = x.fullName;
-    })
 
     const options = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
     const optionsTwo = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
@@ -29,8 +18,6 @@ const Bracket = ({ nba, user, test }) => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
-
 
         const newBracket = {
             name: name,
@@ -46,7 +33,6 @@ const Bracket = ({ nba, user, test }) => {
             }
             ]
         };
-
 
         fetch('/brackets', {
             method: 'POST',
@@ -73,14 +59,6 @@ const Bracket = ({ nba, user, test }) => {
 
     const handleDropTwo = (e) => {
         setTeamNameTwo(e.target.value);
-    }
-
-    const handleDropThree = (e) => {
-        setTeamNameThree(e.target.value);
-    }
-
-    const handleDropFour = (e) => {
-        setTeamNameFour(e.target.value);
     }
 
     return (
@@ -143,6 +121,11 @@ const Bracket = ({ nba, user, test }) => {
                 />
                 <button>Create Bracket</button>
             </form>
+            <div>
+                {teamName}
+                {teamNameTwo}
+            </div>
+
         </div>
     );
 }

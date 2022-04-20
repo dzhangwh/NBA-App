@@ -15,6 +15,7 @@ function App() {
 
     const [nba, setNba] = useState([]);
     const [user, setUser] = useState(null);
+    const [profile, setProfile] = useState([])
     const navigate = useNavigate()
 
     useEffect(() => {
@@ -32,11 +33,19 @@ function App() {
 
     }, [])
 
+    useEffect(() => {
+        fetch("/brackets")
+            .then((r) => r.json())
+            .then(data => setProfile(data))
+    }, [])
+
     console.log(user)
 
     const test = nba?.league?.vegas
 
     console.log(test)
+
+    {/* <ul className="cards">{profile?.map((profileObj) => <Profile key={profileObj.id} {...profileObj} />)}</ul> */ }
 
     return (
         <div className="App">
@@ -53,11 +62,11 @@ function App() {
                     element={<Login setUser={setUser} />}
                 />
                 <Route path="/profile"
-                    element={<Profile user={user} setUser={setUser} />}
+                    element={<Profile profile={profile} />}
                 />
 
                 <Route path="/teams"
-                    element={<TeamPage nba={nba} setNba={setNba} user={user} />}
+                    element={<TeamPage nba={nba} setNba={setNba} user={user} profile={profile} setProfile={setProfile} />}
                 />
                 <Route path="/logout"
                     element={<LogOut setUser={setUser} navigate={navigate} />}

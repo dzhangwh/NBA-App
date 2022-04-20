@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import TeamCollection from "./TeamCollection";
 
-function TeamPage({ nba, setNba, user }) {
+function TeamPage({ nba, setNba, user, profile, setProfile }) {
 
 
     /*
@@ -17,7 +17,8 @@ function TeamPage({ nba, setNba, user }) {
 
             <h1 align="center">NBA Teams</h1>
             <div className="teams">
-                {user ? <TeamCollection nba={test} /> : <h1>Please log in</h1>}
+                {user ? <TeamCollection nba={test} profile={profile} /> : <h1>Please log in</h1>}
+
 
             </div>
 
