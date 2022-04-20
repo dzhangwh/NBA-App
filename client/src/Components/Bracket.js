@@ -61,6 +61,8 @@ const Bracket = ({ nba, user, test }) => {
         setTeamNameTwo(e.target.value);
     }
 
+    console.log()
+
     return (
         <div>
             <h2>Create a Bracket First</h2>
