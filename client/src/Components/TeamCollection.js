@@ -9,7 +9,7 @@ function TeamCollection({ nba, setNba, profile }) {
 
     // const test = nba?.forEach(data => console.log(data))
 
-    console.log(profile)
+
 
 
     return (

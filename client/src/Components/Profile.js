@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function Profile({ profile }) {
+function Profile({ profile, user }) {
     console.log(profile)
     const bracket = profile.map(o => {
         return (
@@ -8,21 +8,19 @@ function Profile({ profile }) {
                 <h4>Teams</h4>
                 <li> {o.name}</li>
                 {/* <li> {o.team[1]}</li> */}
-                <li> {o.teams[0].name}</li>
-                <li> {o.teams[1].name}</li>
+                <li> {o.teams[0]?.name}</li>
+                <li> {o.teams[1]?.name}</li>
 
             </ul>
-
-
         )
     })
-    // console.log(teams)
+
 
     return (
-        <li className="profile">
+        <div className="profile">
 
 
-            <div>My Brackets: {bracket}</div>
+            {user ? <div>My Brackets: {bracket}</div> : "Need to Login"}
             {/* <p>Teams: {teams?.map(data => data.name)}</p> */}
 
 
@@ -30,7 +28,7 @@ function Profile({ profile }) {
 
             {/* <button className="primary" onClick={handleSubmit} >Add</button> */}
 
-        </li>
+        </div>
     )
 
 }

@@ -19,7 +19,7 @@ function App() {
     const navigate = useNavigate()
 
 
-    console.log('profile', profile)
+
 
     useEffect(() => {
         fetch("/me").then((r) => {
@@ -40,13 +40,13 @@ function App() {
         fetch("/brackets")
             .then((r) => r.json())
             .then(data => setProfile(data))
-    }, [])
+    }, [user])
 
-    console.log(user)
+
 
     const test = nba?.league?.vegas
 
-    console.log(test)
+
 
     {/* <ul className="cards">{profile?.map((profileObj) => <Profile key={profileObj.id} {...profileObj} />)}</ul> */ }
 
@@ -65,7 +65,7 @@ function App() {
                     element={<Login setUser={setUser} />}
                 />
                 <Route path="/profile"
-                    element={<Profile profile={profile} />}
+                    element={<Profile profile={profile} user={user} />}
                 />
 
                 <Route path="/teams"

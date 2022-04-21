@@ -20,4 +20,4 @@ team1 = Team.create(name: "Dummy Team", confName: "East" )
 
 puts "seed bracket test"
 
-Bracket.create(name: "Dummy Br", user_id: user1.id, team_id: team1.id)
+Bracket.create(name: "Dummy Br", user_id: user1.id)

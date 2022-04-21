@@ -10,8 +10,6 @@ function TeamPage({ nba, setNba, user, profile, setProfile }) {
 
     const test = nba?.league?.vegas
 
-    console.log(test)
-
     return (
         <div>
 
