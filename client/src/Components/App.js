@@ -34,7 +34,7 @@ function App() {
             .then((r) => r.json())
             .then(data => setNba(data.key))
 
-    }, [])
+    }, [user])
 
     useEffect(() => {
         fetch("/brackets")
