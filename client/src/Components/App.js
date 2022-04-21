@@ -18,6 +18,9 @@ function App() {
     const [profile, setProfile] = useState([])
     const navigate = useNavigate()
 
+
+    console.log('profile', profile)
+
     useEffect(() => {
         fetch("/me").then((r) => {
             if (r.ok) {
@@ -72,7 +75,7 @@ function App() {
                     element={<LogOut setUser={setUser} navigate={navigate} />}
                 />
                 <Route path="/bracket"
-                    element={<Bracket nba={nba} user={user} setUser={setUser} navigate={navigate} test={test} />}
+                    element={<Bracket nba={nba} user={user} setUser={setUser} navigate={navigate} test={test} profile={profile} setProfile={setProfile} />}
                 />
 
             </Routes>

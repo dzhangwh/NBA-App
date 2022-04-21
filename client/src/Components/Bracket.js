@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 
-const Bracket = ({ nba, user, test }) => {
+const Bracket = ({ nba, user, test, setProfile, profile }) => {
 
     const [name, setName] = useState("");
     const [teamName, setTeamName] = useState("");
@@ -13,8 +13,6 @@ const Bracket = ({ nba, user, test }) => {
 
     const options = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
     const optionsTwo = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
-    const optionsThree = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
-    const optionsFour = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -45,6 +43,7 @@ const Bracket = ({ nba, user, test }) => {
                     alert(`${data.error}`)
                 }
                 else {
+                    setProfile([...profile, data])
                     alert(`created ${data.name}`)
                 }
             })

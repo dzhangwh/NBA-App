@@ -4,7 +4,7 @@ function Profile({ profile }) {
     console.log(profile)
     const bracket = profile.map(o => {
         return (
-            <ul>
+            <ul key={o.id}>
                 <h4>Teams</h4>
                 <li> {o.name}</li>
                 {/* <li> {o.team[1]}</li> */}
@@ -12,6 +12,7 @@ function Profile({ profile }) {
                 <li> {o.teams[1].name}</li>
 
             </ul>
+
 
         )
     })
