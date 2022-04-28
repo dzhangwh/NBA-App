@@ -38,10 +38,10 @@ function Signup({ setUser, navigate }) {
     return (
 
         <div>
-            <h1 style={{ align: "center" }} >Signup</h1>
+            <h2 style={{ align: "center" }} >Signup</h2>
             <div className="login">
                 <form className="signup-form" onSubmit={(e) => handleSubmit(e)}>
-                    <label>Firstname</label>
+                    <label>First Name</label>
                     <input
                         type="text"
                         value={firstname}
@@ -50,7 +50,7 @@ function Signup({ setUser, navigate }) {
 
                     />
                     <br />
-                    <label> Lastname</label>
+                    <label> Last Name</label>
                     <input
                         type="lastname"
                         value={lastname}

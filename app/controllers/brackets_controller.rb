@@ -1,7 +1,7 @@
 require 'byebug'
 
 class BracketsController < ApplicationController
-    skip_before_action :authorized, only: :index
+    skip_before_action :authorized
 
     def index
         brack = Bracket.all

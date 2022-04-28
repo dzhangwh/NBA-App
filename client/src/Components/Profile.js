@@ -5,12 +5,13 @@ function Profile({ profile, user }) {
     const bracket = profile.map(o => {
         return (
             <ul key={o.id}>
-                <h4>Teams</h4>
+                <h4>Bracket</h4>
                 <li> {o.name}</li>
-                {/* <li> {o.team[1]}</li> */}
-                <li> {o.teams[0]?.name}</li>
-                <li> {o.teams[1]?.name}</li>
-
+                <h4>Teams</h4>
+                <ol>
+                    <li> {o.teams[0]?.name}</li>
+                    <li> {o.teams[1]?.name}</li>
+                </ol>
             </ul>
         )
     })
@@ -20,7 +21,10 @@ function Profile({ profile, user }) {
         <div className="profile">
 
 
-            {user ? <div>My Brackets: {bracket}</div> : "Need to Login"}
+            {user ? <div>
+                <h2>My Profile </h2>
+                {bracket}
+            </div> : "Need to Login"}
             {/* <p>Teams: {teams?.map(data => data.name)}</p> */}
 
 

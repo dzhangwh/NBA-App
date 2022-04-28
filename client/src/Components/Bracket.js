@@ -9,7 +9,7 @@ const Bracket = ({ nba, user, test, setProfile, profile }) => {
     const [confNameTwo, setConfNameTwo] = useState("");
     const [teamNameTwo, setTeamNameTwo] = useState("");
 
-    console.log(test)
+
 
     const options = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
     const optionsTwo = test && test.map(o => <option key={o.fullName} value={o.fullName}> {o.fullName}</option>)
@@ -60,13 +60,13 @@ const Bracket = ({ nba, user, test, setProfile, profile }) => {
         setTeamNameTwo(e.target.value);
     }
 
-    console.log()
+
 
     return (
         <div>
-            <h2>Create a Bracket First</h2>
+            <h2>Create your Standing/Bracket</h2>
             <form className="bracket" onSubmit={handleSubmit}>
-                <label>Bracket Name: </label>
+                <label>Standing/Bracket Name: </label>
                 <input
                     type="text"
                     required

@@ -6,7 +6,7 @@ function HomePage({ user, nba }) {
     return (
 
         <div align="center" className="homepage">
-            <h1> Welcome to NBA Stats App </h1>
+            <h1> Welcome to NBA Fantasy App </h1>
             {
                 !user && <>
                     <div> Login/signup is required for teams/brackets</div>
